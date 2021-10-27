@@ -1,21 +1,21 @@
 import axios from 'axios'
 
 
-const getData = async(endpoint = 'todos') => {
-    const API_URL = `https://jsonplaceholder.typicode.com/${endpoint}`;
+const getData = async(location = 'Kampala') => {
+    const API_URL = `${process.env.REACT_APP_BASE_URL}?key=${process.env.REACT_APP_API_KEY}&q=${location}&days=1&aqi=no&alerts=no`;
     let response = ''
 
     try {
         response = await axios.get(API_URL);
-        // console.log(response)
+        console.log(response)
         
         let { data } = response
         return data;
-        // console.log(data)
+        
     } catch (error) {
 
         console.log(error)
-        console.log(response)
+        // console.log(response)
         return { 'error': 'Resource not found' }
     }
 }
