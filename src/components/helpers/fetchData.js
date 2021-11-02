@@ -7,7 +7,7 @@ const getData = async(location = 'Kampala') => {
 
     try {
         response = await axios.get(API_URL);
-        console.log(response)
+        // console.log(response)
         
         let { data } = response
         return data;
@@ -16,9 +16,8 @@ const getData = async(location = 'Kampala') => {
 
         console.log(error)
         // console.log(response)
-        return { 'error': 'Resource not found' }
+        return { 'message': "Unable to find location. Try again." }
     }
 }
-
 
 export default getData
