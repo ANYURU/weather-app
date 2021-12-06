@@ -1,0 +1,20 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #fff;
+    font: "Helvetica Neue Ultra Thin";
+    color: #000;
+
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    background-color: #0073D1;
+    height: 100%;
+}
+
+
+
