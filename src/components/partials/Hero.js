@@ -22,6 +22,8 @@ function Hero() {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
+
+
         const response = await getData(stateLocation)
 
         console.log(response)
@@ -54,24 +56,24 @@ function Hero() {
 
                 <form onSubmit={handleSubmit} style={{"display":"flex","gap":"10px"}}> 
                     <input type="text" 
-                    placeholder="location"
+                    placeholder="Search by location"
                     onChange={handleInput}
                     ></input>
                     <input type="submit" value="GO"></input>
                 </form>
 
                 <div>
-                    {weatherInfo.hasOwnProperty('message') ?  <div>{msg}</div>    :   <div>
-                                                                                    name: {name} <br />
-                                                                                    text: {text} <br />
-                                                                                    country: {country} <br />
-                                                                                    Longitude: {lon} <br />
-                                                                                    Latitude: {lat} <br />
-                                                                                    Temperature in degrees celcius: {temp_c} <br />
-                                                                                    Temperature in degrees fahrenheit: {temp_f} <br />
-                                                                                    {icon && <img src={icon} alt="Condition" />}<br/>
-                                                                                    Code: {code} <br />
-                                                                                </div> }
+                    {weatherInfo.hasOwnProperty('message') ?  <div>{msg}</div>    :     <div className="container">
+                                                                                            name: {name} <br />
+                                                                                            text: {text} <br />
+                                                                                            country: {country} <br />
+                                                                                            Longitude: {lon} <br />
+                                                                                            Latitude: {lat} <br />
+                                                                                            Temperature in degrees celcius: {temp_c} <br />
+                                                                                            Temperature in degrees fahrenheit: {temp_f} <br />
+                                                                                            {icon && <img src={icon} alt="Condition" />}<br/>
+                                                                                            Code: {code} <br />
+                                                                                        </div> }
                     
                 </div>
 
